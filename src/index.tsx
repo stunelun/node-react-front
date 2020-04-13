@@ -12,4 +12,3 @@ ReactDOM.render(
     </ApolloProvider>,
     document.getElementById("potato") as HTMLElement
 );
-
