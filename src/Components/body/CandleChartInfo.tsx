@@ -1,10 +1,17 @@
-import styled from "styled-components";
+import React from 'react';
+import ChartComponent from './ChartComponent/ChartComponent';
+import NavColList from './NavColList/NavColList';
+import CandleChartInfoCss from './styles';
 
-const CandleChartInfo = styled.div`
-    font-size : 30px;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 300px auto;
-`
- 
+class CandleChartInfo extends React.Component {
+    render() {
+        return (
+            <CandleChartInfoCss>
+                <NavColList />
+                <ChartComponent />
+            </CandleChartInfoCss>
+        );
+    };
+};
+
 export default CandleChartInfo;

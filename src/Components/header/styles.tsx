@@ -1,11 +1,12 @@
+
 import styled from "styled-components";
 
-const FooterCommon = styled.footer`
+const HeaderCss = styled.header`
     position: fixed;
+    top: 0;
     left: 0;
-    bottom: 0;
     width: 100%;
     text-align: left;
 `
 
-export default FooterCommon;
+export default HeaderCss;

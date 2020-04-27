@@ -1,8 +1,15 @@
-import styled from 'styled-components';
+import React from 'react';
+import ChartData from '../../../../Routes/CandleChart';
+import ChartImageCss from './styles';
 
-const ChartImage = styled.div`
-    text-align: center;
-    font-size: 100%;
-`
+class ChartComponent extends React.Component {
+    render() {
+        return (
+            <ChartImageCss>
+                <ChartData />
+            </ChartImageCss>
+        );
+    };
+};
 
-export default ChartImage;
+export default ChartComponent;
