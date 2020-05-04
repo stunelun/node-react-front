@@ -1,17 +1,15 @@
 import React from 'react';
 import ChartComponent from './ChartComponent/ChartComponent';
-import NavColList from './NavColList/NavColList';
+import ChartColumnList from './NavColList/ChartColumnList';
 import CandleChartInfoCss from './styles';
 
-class CandleChartInfo extends React.Component {
-    render() {
-        return (
-            <CandleChartInfoCss>
-                <NavColList />
-                <ChartComponent />
-            </CandleChartInfoCss>
-        );
-    };
+const CandleChartInfo = () => {
+    return (
+        <CandleChartInfoCss>
+            <ChartColumnList />
+            <ChartComponent />
+        </CandleChartInfoCss>
+    );
 };
 
 export default CandleChartInfo;

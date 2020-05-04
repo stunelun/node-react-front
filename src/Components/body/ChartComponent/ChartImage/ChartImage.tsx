@@ -1,15 +1,14 @@
 import React from 'react';
-import ChartData from '../../../../Routes/CandleChart';
+import ChartData from '../../../../Routes/chartInfo';
+import GoogleChart from './googleChart';
 import ChartImageCss from './styles';
 
-class ChartComponent extends React.Component {
-    render() {
-        return (
-            <ChartImageCss>
-                <ChartData />
-            </ChartImageCss>
-        );
-    };
+const ChartComponent = () => {
+    return (
+    <>
+        <GoogleChart />
+    </>
+    );
 };
 
 export default ChartComponent;

@@ -1,10 +1,15 @@
 import styled from "styled-components";
 
-const CandleChartInfoCss = styled.div`
-    margin-top: 60px;
-    font-size : 30px;
+const CandleChartInfoCss = styled.main`
     display: grid;
-    grid-gap: 10px;
+    margin: 0px;
+    width : 100%;
+    overflow-x: hidden;
+
+/* Need modifying margin settings... */
+    margin-block-start: 40px;
+
+    font-size : 30px;
     grid-template-columns: 300px auto;
 `
  

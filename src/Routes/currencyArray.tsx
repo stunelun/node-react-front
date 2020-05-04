@@ -27,14 +27,14 @@ export default () => {
          */
         getData.forEach((element: string, currencyName: string) => {
             currencyName = element.split('_')[positionCurrencyName];
-            arrCurrencyName.push(currencyName);
+            arrCurrencyName.push(currencyName.toUpperCase());
         });
 
         return(
             <div>
                 {
-                    arrCurrencyName.map((currName) => {
-                        return <li>{currName}</li>
+                    arrCurrencyName.map((currName,index) => {
+                        return <li key={index}>{currName}</li>
                     })
                 }
             </div>

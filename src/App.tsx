@@ -1,7 +1,6 @@
-import { ApolloProvider } from '@apollo/react-hooks';
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import client from './apollo';
+import CandleChartInfo from './Components/body/CandleChartInfo';
 // import LinkTest             from './Components/header/LInkTest';
 import {Home} from './pages';
 
@@ -12,15 +11,12 @@ import {Home} from './pages';
 class App extends Component {
   render(){
     return (
-      <ApolloProvider client = {client}>
         <BrowserRouter>
           <Route path="/" component={Home}/>
         </BrowserRouter>
-      </ApolloProvider>
     )
   }
 } 
-
 
 
 export default App;

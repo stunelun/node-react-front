@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
-const ChartDataList = styled.li`
+const ChartDataListCss = styled.ul`
     display: grid;
+    padding: 0;
+    margin: 0;
     grid-template-columns: auto auto auto auto;
     background-color: greenyellow;
 
-    li a {
+    li {
         display: grid;
         color: #000;
         padding-left: 10px;
@@ -13,4 +15,4 @@ const ChartDataList = styled.li`
     }
 `
 
-export default ChartDataList;
+export default ChartDataListCss;

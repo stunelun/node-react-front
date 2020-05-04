@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const NavColListCss = styled.ul`
+    height: 100vh;
+    overflow-x: hidden;
     list-style-type: none;
     display: grid;
     
@@ -9,7 +11,6 @@ const NavColListCss = styled.ul`
 
     text-align: center;
     font-size: 30px;
-    grid-template-columns: 300px;
     background-color: whitesmoke;
     cursor: pointer;
 
@@ -19,7 +20,7 @@ const NavColListCss = styled.ul`
         padding: 8px 16px;
         text-decoration: none;
         &:hover{
-        background-color: #4CAF50;
+            background-color: #4CAF50;
         }
     }
 
@@ -28,7 +29,7 @@ const NavColListCss = styled.ul`
         background-color: darkseagreen;
         cursor: text;
         &:hover{
-        background-color: darkseagreen;
+            background-color: darkseagreen;
         }
     }
 `
