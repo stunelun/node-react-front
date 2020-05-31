@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import CandleChartInfo from '../Components/body/CandleChartInfo';
 import Footer from '../Components/footer/Footer';
@@ -14,11 +15,9 @@ const Home = () => {
         <Fragment>
             <Header />
             <Route exact path="/CandleChart" component={CandleChartInfo} />
-            {/* footer 내장 css를 수정하여 하단에 고정시키고 싶은데, 해당 파일이 어디에 있는 지 아직 모르겠음... 푸터컴포넌트 직접 만듦. */}
             <Footer />
         </Fragment>
     )
 }
-
 
 export default Home;

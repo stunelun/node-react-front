@@ -2,7 +2,7 @@ import React from 'react';
 import CurrencyArray from '../../../Routes/currencyArray';
 import ChartColumnListCss from './styles';
 
-const ChartColumnList = () => {
+const ChartColumnList = ()=> {
     return (
         <ChartColumnListCss>
             <li className='title'>CurrencyPair</li>

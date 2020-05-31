@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const NavColListCss = styled.ul`
-    height: 100vh;
-    overflow-x: hidden;
+    height : 50vh;
+    overflow-y : scroll;
     list-style-type: none;
     display: grid;
     
@@ -15,12 +15,16 @@ const NavColListCss = styled.ul`
     cursor: pointer;
 
     li {
+        height : 5vh;
         display: block;
-        color: #000;
-        padding: 8px 16px;
-        text-decoration: none;
+        padding: 0px 0px;
         &:hover{
             background-color: #4CAF50;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
         }
     }
 

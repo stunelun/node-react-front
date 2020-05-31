@@ -5,7 +5,7 @@ const ChartDataListCss = styled.ul`
     padding: 0;
     margin: 0;
     grid-template-columns: auto auto auto auto;
-    background-color: greenyellow;
+    background-color: white;
 
     li {
         display: grid;
