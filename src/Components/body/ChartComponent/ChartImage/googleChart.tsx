@@ -3,12 +3,15 @@ import Chart from 'react-google-charts';
 import ChartInfo from '../../../../object/ChartInfo';
 import KorbitData from '../../../../object/KorbitData';
 
-const GoogleChart = (props: {selectData:KorbitData[]}) => {
+const GoogleChart = (props: {selectData:KorbitData[], currencyPair:string}) => {
     const nowTime = new Date().getTime();
     const min30Term : number = 30*60*1000;
     let minPoint = nowTime - (nowTime % (min30Term));
     const chartInfoArray:ChartInfo[] = [];
-    const separatePoint:number = 24;
+    
+    /** view half-day graph : 30min * 12(24) seperate */
+    const separatePoint:number = 12;
+    // const separatePoint:number = 24;
 
     for (let index = 0; index < separatePoint; index++) {
         const chartInfo:ChartInfo = new ChartInfo;
@@ -48,32 +51,36 @@ const GoogleChart = (props: {selectData:KorbitData[]}) => {
     const viewChartData = () => {
         const chartData = [];
         chartData.push(['Time', 'Low', 'Start', 'Last', 'High']);
-        
-        chartInfoArray.reverse().forEach(element => {
-            chartData.push([element.time, element.dataLow, element.dataStart, element.dataLast , element.dataHigh]);
+        chartInfoArray.reverse().forEach((element) => {
+          chartData.push([
+            element.time, element.dataLow, element.dataStart, element.dataLast, element.dataHigh]);
+        });
+        chartData.forEach(element => {
+            if(element[1])  console.log('Test : ',props.currencyPair, element)
         });
         return chartData;
     }
-    
+
     return (
         <Chart
             width={'100%'}
-            height={800}
+            height={'100%'}
             chartType="CandlestickChart"
             loader={<div>Loading Chart</div>}
             data={
                 viewChartData()
             }
             options={{
+                title: props.currencyPair,
                 legend: 'none',
                 backgroundColor: 'smokewhite',
                 candlestick: {
-                    fallingColor: { strokeWidth: 0, fill: 'blue'}, // blue
-                    risingColor: { strokeWidth: 0, fill: 'red'},   // red
+                    fallingColor: { strokeWidth: 0, fill: 'blue'},
+                    risingColor: { strokeWidth: 0, fill: 'red'},
                   },
                 colors: ["black"]
             }}
-            rootProps={{ 'data-testid': '1' }}
+            // rootProps={{ 'data-testid': '1' }}    <== rootProps 어떤 역할인 지 모르겠으나, 없어도 그래프 작동. 학습 목적으로 남겨놓음
         />
     );
 };

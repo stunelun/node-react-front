@@ -5,7 +5,8 @@ import CandleChartInfo from '../Components/body/CandleChartInfo';
 import Footer from '../Components/footer/Footer';
 import Header from '../Components/header/Header';
 
-const Home = () => {
+const Home = (props: any) => {
+    console.log('Home props : ', props)
     return (
         /**
          * React.Fragment

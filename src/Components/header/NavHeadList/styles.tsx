@@ -1,5 +1,20 @@
 
-import styled from "styled-components";
+import styled from 'styled-components';
+
+const textColor = {
+    color: "black"
+}
+
+const onTextColor = {
+    onTitle: "item1",
+    onColor: ""
+}
+
+export const setTextColor = (onTitle: string, onColor: string) => {
+    onTextColor.onTitle = onTitle;
+    onTextColor.onColor = onColor;
+}
+
 
 const NavHeadListCss = styled.ul`
     display: grid;
@@ -11,17 +26,14 @@ const NavHeadListCss = styled.ul`
     margin-block-end: 0px;
 
     list-style-type: none;
-    
+
     text-align: left;
-    text-indent:10px;
-    
-    
+    text-indent: 10px;
 
     /* padding setting */
-    /* padding: none; */
-    padding-left    : 0px;
-    padding-right   : 0px;
-    font-size       : 150%;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 150%;
 
     .title {
         text-align: center;
@@ -30,14 +42,16 @@ const NavHeadListCss = styled.ul`
     }
 
     li a {
-            display: block;
-            color: #000;
-            text-decoration: none;
-            &:hover{
-                color: whitesmoke;
-            }
-            
-            
+        display: block;
+        color: ${() => textColor.color};
+        text-decoration: none;
+        &:hover {
+            color: whitesmoke;
+        }
+    }
+
+    .${onTextColor.onTitle} {
+        color: ${() => onTextColor.onColor};
     }
 `
 

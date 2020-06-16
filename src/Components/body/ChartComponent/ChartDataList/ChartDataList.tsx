@@ -1,7 +1,5 @@
 import React from 'react';
 import KorbitData from '../../../../object/KorbitData';
-// import KorbitData from '../../../../object/KorbitData';
-// import CurrencyArray from '../../../Routes/currencyArray';
 import ChartDataListCss from './styles';
 
 const ChartDataList = (props: {selectData:KorbitData[]}) => {

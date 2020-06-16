@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 const NavColListCss = styled.ul`
-    height : 50vh;
+    height : 600px;
     overflow-y : scroll;
     list-style-type: none;
     display: grid;
-    
-    /* ul margin,padding clear */
+
     margin: 0; padding: 0;
 
     text-align: center;

@@ -4,9 +4,8 @@ const CandleChartInfoCss = styled.main`
     display: grid;
     margin: 0px;
     width : 100%;
-    overflow-x: hidden;
+    height : 100%;
 
-/* Need modifying margin settings... */
     margin-block-start: 40px;
 
     font-size : 30px;

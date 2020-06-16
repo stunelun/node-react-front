@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import CandleChartInfo from './Components/body/CandleChartInfo';
 // import LinkTest             from './Components/header/LInkTest';
 import {Home} from './pages';
 
@@ -9,6 +8,12 @@ import {Home} from './pages';
 // 2.함수로 할 경우, 랜더링 부분을 안넣어줘도 된다. (이유는...?)
 // 3. 그 외에는...?
 class App extends Component {
+  constructor(props:any){
+    super(props);
+    this.state = {
+      viewCurrencyPair : "BTC_krw"
+    }
+  }
   render(){
     return (
         <BrowserRouter>

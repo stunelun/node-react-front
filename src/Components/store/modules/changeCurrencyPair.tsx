@@ -1,33 +1,32 @@
 import { createStore } from 'redux';
 
-const changeCurrnecy = "CHANGECURRENCY"
+const CHANGECURRENCY = "CHANGECURRENCY"
 
 /* action */
 export const ChangeCurrency = (viewCurrencyPair:string) => ({
-    type: changeCurrnecy,
+    type: CHANGECURRENCY,
     viewCurrencyPair
 });
 export const actionCreators = {
     ChangeCurrency,
 };
 
-/* init state */
-const initialState = [{
-    viewCurrencyPair: 'btc_krw'
-}];
-
+/* state */
+const initialState = {
+    viewCurrencyPair: 'BTC_krw'
+};
+const changeState = (newCurrencyPair:string) => {
+    return {
+       viewCurrencyPair:newCurrencyPair,  
+    }
+}
 
 /* reducer */
-export const reducerChangeCurrencyPair = (state = initialState, action: { type: string; currencyName: string; }) => {
+export const reducerChangeCurrencyPair = (state = initialState, action: { type: string; viewCurrencyPair: string; }) => {
     switch (action.type) {
-        case changeCurrnecy:
-            console.log('changeCurrencyName Test : ', action.currencyName);
-            return {
-                ...state,
-                viewCurrencyPair:action.currencyName,
-            }
+        case CHANGECURRENCY:
+            return changeState(action.viewCurrencyPair);
         default:
-            console.log('default state Test : ', state);
             return state;
     }
 }
