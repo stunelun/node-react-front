@@ -34,7 +34,6 @@ const CurrencyArray = (props:any) => {
      */
     getData.forEach((element: string, currencyName: string) => {
         currencyName = element.split('_')[positionCurrencyName];
-        console.log('getData Test result _ currencyName : ', currencyName);
         arrCurrencyName.push((element.split('_')[positionCurrencyName]).toUpperCase());
     });
 

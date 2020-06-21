@@ -1,6 +1,6 @@
 import React from 'react';
 import Chart from 'react-google-charts';
-import ChartInfo from '../../../../object/ChartInfo';
+import ChartInfo, {setDefaultChartInfo} from '../../../../object/ChartInfo';
 import KorbitData from '../../../../object/KorbitData';
 
 const GoogleChart = (props: {selectData:KorbitData[], currencyPair:string}) => {
@@ -10,8 +10,8 @@ const GoogleChart = (props: {selectData:KorbitData[], currencyPair:string}) => {
     const chartInfoArray:ChartInfo[] = [];
     
     /** view half-day graph : 30min * 12(24) seperate */
-    const separatePoint:number = 12;
-    // const separatePoint:number = 24;
+    // const separatePoint:number = 12;
+    const separatePoint:number = 24;
 
     for (let index = 0; index < separatePoint; index++) {
         const chartInfo:ChartInfo = new ChartInfo;
@@ -38,7 +38,7 @@ const GoogleChart = (props: {selectData:KorbitData[], currencyPair:string}) => {
         const timeFormat = (checkString : string) => {
             return checkString.length === 2 ? checkString : '0'+checkString;
         }
-        
+
         const date = new Date(minPoint);
         chartInfo.time = `${timeFormat(date.getHours().toString())}:${timeFormat(date.getMinutes().toString())}`;
 
@@ -51,14 +51,27 @@ const GoogleChart = (props: {selectData:KorbitData[], currencyPair:string}) => {
     const viewChartData = () => {
         const chartData = [];
         chartData.push(['Time', 'Low', 'Start', 'Last', 'High']);
-        chartInfoArray.reverse().forEach((element) => {
-          chartData.push([
-            element.time, element.dataLow, element.dataStart, element.dataLast, element.dataHigh]);
+        
+        let chkCnt: number = 0;
+        chartInfoArray.reverse().forEach((element) => {    
+            chartData.push([
+                element.time, element.dataLow, element.dataStart, element.dataLast, element.dataHigh]);
+            if(element.dataHigh === undefined) chkCnt++;
         });
-        chartData.forEach(element => {
-            if(element[1])  console.log('Test : ',props.currencyPair, element)
-        });
-        return chartData;
+
+        if(chkCnt === separatePoint) {
+            const noDataInfo = [];
+            const startDataArray = 1;
+            const timePoint = 0;
+            noDataInfo.push(
+                ['', '', '', '', ''],
+                [`${props.currencyPair} has no recent data.
+                [${chartData[startDataArray][timePoint]}~${chartData[separatePoint][timePoint]}] `,0,0,0,0]
+            );
+            return noDataInfo;
+        } else {
+            return chartData;
+        }
     }
 
     return (

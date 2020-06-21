@@ -5,7 +5,6 @@ import FooterDataListCss from './styles';
 const Footer = () => {
     return (
         <FooterDataListCss>
-            {/* ListText 구문도 props로 넘겨서 받는 방식으로 수정해야 할 거 같음, 추후 수정 예정. 04/19 */}
             <FooterDataListText>
                 <div>(주) 코빗</div>
                 <div>서울특별시 강남구 테헤란로5길 7, 4층</div>
