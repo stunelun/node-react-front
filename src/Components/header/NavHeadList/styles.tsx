@@ -6,7 +6,7 @@ const textColor = {
 }
 
 const onTextColor = {
-    onTitle: "item1",
+    onTitle: "",
     onColor: ""
 }
 

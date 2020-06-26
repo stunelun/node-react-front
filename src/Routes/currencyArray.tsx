@@ -2,8 +2,8 @@
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import React from "react";
-import { connect } from "react-redux";
-import { actionCreators } from "../Components/store/modules/changeCurrencyPair";
+// import { connect } from "react-redux";
+// import { actionCreators } from "../actions/index";
 
 
 const getQuery = () => {
@@ -48,12 +48,4 @@ const CurrencyArray = (props:any) => {
     );
 };
 
-const mapDispatchToProps = (dispatch:any) => {
-    return {
-        CurrencypairClick: (viewCurrencyPair:string) => {
-            dispatch(actionCreators.ChangeCurrency(viewCurrencyPair+'_krw'));
-        }
-    }
-}
-
-export default connect(null, mapDispatchToProps)(CurrencyArray);
+export default CurrencyArray;

@@ -1,12 +1,13 @@
 import React from 'react';
-import CurrencyArray from '../../../Routes/currencyArray';
+// import CurrencyArray from '../../../Routes/currencyArray';
+import ChangeCurrencyPairContainer from '../../../containers/changeCurrencyPairContainer';
 import ChartColumnListCss from './styles';
 
 const ChartColumnList = ()=> {
     return (
         <ChartColumnListCss>
             <li className='title'>CurrencyPair</li>
-            <CurrencyArray />
+            <ChangeCurrencyPairContainer />
         </ChartColumnListCss>
     );
 };

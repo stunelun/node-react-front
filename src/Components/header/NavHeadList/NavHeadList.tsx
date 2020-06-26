@@ -3,7 +3,7 @@ import NavHaedListCss, {setTextColor} from './styles';
 
 class NavHeadList extends Component {
     state = {
-        onTitle: "item1",
+        onTitle: "",
         onColor: ""
     }
     
@@ -15,7 +15,6 @@ class NavHeadList extends Component {
     }
 
     render (){
-        console.log(this.state);
         setTextColor(this.state.onTitle, this.state.onColor);
         return (
             <NavHaedListCss>

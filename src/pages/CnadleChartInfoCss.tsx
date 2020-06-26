@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CandleChartInfoCss = styled.main`
+const CnadleChartInfoCss = styled.main`
     display: grid;
     margin: 0px;
     width : 100%;
@@ -12,4 +12,4 @@ const CandleChartInfoCss = styled.main`
     grid-template-columns: 300px auto;
 `
  
-export default CandleChartInfoCss;
+export default CnadleChartInfoCss;

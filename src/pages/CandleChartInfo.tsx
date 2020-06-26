@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ChartInfoData from '../../Routes/chartInfoData';
-import ChartComponent from './ChartComponent/ChartComponent';
-import ChartColumnList from './NavColList/ChartColumnList';
-import CandleChartInfoCss from './styles';
+import ChartComponent from '../Components/body/ChartComponent/ChartComponent';
+import ChartColumnList from '../Components/body/NavColList/ChartColumnList';
+import ChartInfoData from '../Routes/chartInfoData';
+import CandleChartInfoCss from './CnadleChartInfoCss';
 
 const CandleChartInfo = (props:any) => {
     const selectData = ChartInfoData(props.state.viewCurrencyPair);
