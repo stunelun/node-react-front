@@ -1,6 +1,6 @@
 import React from 'react';
 import Chart from 'react-google-charts';
-import ChartInfo, {setDefaultChartInfo} from '../../../../object/ChartInfo';
+import ChartInfo from '../../../../object/ChartInfo';
 import KorbitData from '../../../../object/KorbitData';
 
 const GoogleChart = (props: {selectData:KorbitData[], currencyPair:string}) => {
@@ -14,8 +14,8 @@ const GoogleChart = (props: {selectData:KorbitData[], currencyPair:string}) => {
     const separatePoint:number = 24;
 
     for (let index = 0; index < separatePoint; index++) {
-        const chartInfo:ChartInfo = new ChartInfo;
-        let KorbitDataTemp:KorbitData = new KorbitData;
+        const chartInfo:ChartInfo = new ChartInfo();
+        let KorbitDataTemp:KorbitData = new KorbitData();
 
         props.selectData.forEach(async selectDataElement => {
             if(minPoint-min30Term <= selectDataElement.timestamp && selectDataElement.timestamp <= minPoint) {

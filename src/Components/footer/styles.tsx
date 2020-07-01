@@ -5,7 +5,6 @@ const Footer = styled.footer`
     left: 0;
     bottom: 0;
     width: 100%;
-    text-align: left;
 `
 
 export default Footer;

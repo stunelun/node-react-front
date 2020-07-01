@@ -4,11 +4,9 @@ import HeaderCss from './styles';
 
 const Header = () => {
     return (
-        <>
         <HeaderCss>
             <NavHeadList />
         </HeaderCss>
-        </>
     )
 }
 
